@@ -1,0 +1,10 @@
+set(EXEC_FILE ${CMAKE_PROJECT_NAME})
+
+file(GLOB_RECURSE SRC_FILES LIST_DIRECTORIES true *.h *.cpp)
+
+add_executable(${EXEC_FILE} ${SRC_FILES})
+
+list(REMOVE_ITEM SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp)
+
+
+add_library(${EXEC_FILE}_lib STATIC ${SRC_FILES})
